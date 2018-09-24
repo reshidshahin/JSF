@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+        <h:panelGrid columns="2">
+            <h:outputText value="Adinizi yazin:"/>
+            <h:inputText value="#{managedBeanSinifi.isimSoyisim}"/>
+
+            <h:outputText value="Cinsiyyetiniz nedir?"/>
+            <h:selectManyCheckbox value="#{managedBeanSinifi.cinsiyet}">
+                <f:selectItem itemLabel="Bayan" itemValue="Bayan"/>
+                <f:selectItem itemLabel="Erkek" itemValue="Erkek"/>
+            </h:selectManyCheckbox>
+
+            <h:outputText value="Ehliyetiniz varmi?"/>
+            <h:selectOneRadio value="#{managedBeanSinifi.ehliyetVarMi}">
+                <f:selectItem itemLabel="Evet" itemValue="Evet"/>
+                <f:selectItem itemLabel="Hayir" itemValue="Hayir"/>
+            </h:selectOneRadio>
+
+            <h:outputText value="Adres giriniz:"/>
+            <h:inputTextarea value="#{managedBeanSinifi.adres}"/>
+
+            <h:outputText value="Il seciniz:"/>
+            <h:selectOneMenu value="#{managedBeanSinifi.il}">
+                <f:selectItem itemLabel="Baku" itemValue="Baku"/>
+                <f:selectItem itemLabel="Gence" itemValue="Gence"/>
+            </h:selectOneMenu>
+
+            <h:outputText value="JSF Sekli"/>
+            <h:graphicImage library="images" name="sekil.jpg"/>
+
+            <h:outputText value="Parol yazin:"/>
+            <h:inputSecret value="#{managedBeanSinifi.parola}"/>
+
+            <h:outputText value="Buton ile verilerin gonderimi"/>
+            <h:commandButton value="Gonder"/>
+
+            <h:outputText value="OutputLink kullanimi"/>
+            <h:outputLink value="https://www.google.az/">Google</h:outputLink>
+
+            <h:outputText value="Verdiginiz Bilgilerin Dogrulugunu kabul ediyor musunuz?"/>
+            <h:selectBooleanCheckbox value="#{managedBeanSinifi.kabulEdildiMi}"/>
+
+        </h:panelGrid>
+        <h:panelGrid columns="1">
+            <h3>Girdiginiz bilgiler</h3>
+            <h:outputText value="#{managedBeanSinifi.mesaj}" style="color: red"/>
+            <h:outputText value="#{managedBeanSinifi.isimSoyisim}"/>
+            <h:outputText value="#{managedBeanSinifi.cinsiyet}"/>
+            <h:outputText value="#{managedBeanSinifi.ehliyetVarMi}"/>
+            <h:outputText value="#{managedBeanSinifi.il}"/>
+            <h:outputText value="#{managedBeanSinifi.adres}"/>
+            <h:outputText value="#{managedBeanSinifi.parola}"/>
+        </h:panelGrid>
+    </h:form>
+    </h:body>
+</html>
+
